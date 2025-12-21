@@ -1,0 +1,11 @@
+parameters:
+    level: 5
+    paths:
+        - src
+        - tests
+    ignoreErrors:
+        - '#.*#'
+    bootstrapFiles:
+        - vendor/autoload.php
+    excludePaths:
+        - tests/Traits

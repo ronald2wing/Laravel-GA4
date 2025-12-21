@@ -1,0 +1,121 @@
+# Laravel GA4 Package - .gitignore Rules
+# =========================================
+
+# ----------------------------------------------------------------------
+# Development & Test Patterns
+# ----------------------------------------------------------------------
+test-*.txt
+test-ignore-*.txt
+test-dir/
+
+# ----------------------------------------------------------------------
+# Dependencies & Package Management
+# ----------------------------------------------------------------------
+vendor/
+node_modules/
+composer.lock
+composer.phar
+
+# Note: For Laravel packages, composer.lock is usually excluded to allow
+#       flexibility with dependency versions in consuming applications.
+
+# ----------------------------------------------------------------------
+# Environment & Configuration Files
+# ----------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------------------------------------------------
+# Laravel Framework Artifacts
+# ----------------------------------------------------------------------
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+bootstrap/cache/
+
+# ----------------------------------------------------------------------
+# Build & Distribution Artifacts
+# ----------------------------------------------------------------------
+build/
+dist/
+packages/*/vendor/
+packages/*/composer.lock
+
+# ----------------------------------------------------------------------
+# Testing Artifacts
+# ----------------------------------------------------------------------
+.phpunit.result.cache
+.phpunit.cache
+.phpunit.xml
+phpunit.xml
+coverage/
+.php-cs-fixer.cache
+
+# ----------------------------------------------------------------------
+# Code Quality & Analysis Cache
+# ----------------------------------------------------------------------
+.phplint-cache
+.phpstan.cache
+.phpstan.neon
+.php-cs-fixer.php
+.php-cs-fixer.dist.php
+.pint.json
+*.cache
+
+# ----------------------------------------------------------------------
+# IDE & Editor Configuration
+# ----------------------------------------------------------------------
+.idea/
+.vscode/
+.phpactor.json
+.phpstorm.meta.php
+*.swp
+*.swo
+._*
+*.sublime-*
+
+# ----------------------------------------------------------------------
+# Operating System Artifacts
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ----------------------------------------------------------------------
+# Logs & Temporary Files
+# ----------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+~$*
+*.pid
+*.seed
+
+# ----------------------------------------------------------------------
+# Documentation Build Output
+# ----------------------------------------------------------------------
+docs/_build/
+
+# ----------------------------------------------------------------------
+# Version Control & Backup Files
+# ----------------------------------------------------------------------
+*.orig
+*.rej
+*.bak
+
+# ----------------------------------------------------------------------
+# JavaScript/Node.js Package Management
+# ----------------------------------------------------------------------
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ----------------------------------------------------------------------
+# Code Formatter & Linter Configuration (User-specific)
+# ----------------------------------------------------------------------
+.prettier*
+.eslint*
+.stylelint*
