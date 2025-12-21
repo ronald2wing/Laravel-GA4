@@ -1,0 +1,108 @@
+{
+  "name": "ronald2wing/laravel-ga4",
+  "description": "Drop-in Google Analytics 4 (gtag) snippet for Laravel Blade.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "ga4",
+    "gtag",
+    "google-analytics",
+    "analytics",
+    "blade",
+    "tracking"
+  ],
+  "authors": [
+    {
+      "name": "Ronald2Wing",
+      "homepage": "https://github.com/ronald2wing",
+      "email": "ronald2wing@gmail.com",
+      "role": "Package Maintainer"
+    }
+  ],
+  "homepage": "https://github.com/ronald2wing/laravel-ga4",
+  "support": {
+    "issues": "https://github.com/ronald2wing/laravel-ga4/issues",
+    "source": "https://github.com/ronald2wing/laravel-ga4",
+    "docs": "https://github.com/ronald2wing/laravel-ga4#readme",
+    "forum": "https://github.com/ronald2wing/laravel-ga4/discussions",
+    "security": "https://github.com/ronald2wing/laravel-ga4/security"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ronald2wing"
+    },
+    {
+      "type": "other",
+      "url": "https://www.buymeacoffee.com/ronald2wing"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.26",
+    "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+    "phpstan/phpstan": "^2.1.33",
+    "phpunit/phpunit": "^10.0|^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ronald2Wing\\LaravelGa4\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ronald2Wing\\LaravelGa4\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+    "test-verbose": "vendor/bin/phpunit --verbose",
+    "test-filter": "vendor/bin/phpunit --filter",
+    "lint": "vendor/bin/pint --test",
+    "pint": "vendor/bin/pint",
+    "analyse": "vendor/bin/phpstan analyse src tests --memory-limit=2G",
+    "analyse-baseline": "vendor/bin/phpstan analyse src tests --generate-baseline",
+    "check": [
+      "@lint",
+      "@test"
+    ],
+    "validate-composer": "composer validate --strict"
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.3.0"
+    },
+    "process-timeout": 2000,
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ronald2Wing\\LaravelGa4\\Ga4ServiceProvider"
+      ]
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.github",
+      "/.gitignore",
+      "/.phpunit.result.cache",
+      "/phpunit.xml.dist",
+      "/coverage",
+      "/phpstan.neon.dist"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
