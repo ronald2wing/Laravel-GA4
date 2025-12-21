@@ -1,0 +1,148 @@
+{
+  "name": "ronald2wing/laravel-ga4",
+  "description": "Laravel package for Google Analytics 4 (GA4) tracking with automatic Livewire SPA support",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "ga4",
+    "google-analytics",
+    "analytics",
+    "livewire",
+    "tracking",
+    "spa",
+    "google",
+    "measurement",
+    "pageview"
+  ],
+  "authors": [
+    {
+      "name": "Ronald2Wing",
+      "homepage": "https://github.com/ronald2wing",
+      "email": "ronald2wing@users.noreply.github.com",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/ronald2wing/laravel-ga4",
+  "support": {
+    "issues": "https://github.com/ronald2wing/laravel-ga4/issues",
+    "source": "https://github.com/ronald2wing/laravel-ga4",
+    "docs": "https://github.com/ronald2wing/laravel-ga4#readme",
+    "forum": "https://github.com/ronald2wing/laravel-ga4/discussions"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ronald2wing"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ronald2Wing\\LaravelGa4\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ronald2Wing\\LaravelGa4\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0|^11.0|^12.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.26",
+    "orchestra/testbench": "^8.0",
+    "phpunit/phpunit": "^10.0"
+  },
+  "suggest": {
+    "livewire/livewire": "Required for automatic Single Page Application (SPA) navigation tracking in Livewire applications"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "vendor/bin/phpunit --coverage-html coverage"
+    ],
+    "test-coverage-clover": [
+      "@putenv XDEBUG_MODE=coverage",
+      "vendor/bin/phpunit --coverage-clover coverage.xml"
+    ],
+    "test-coverage-text": [
+      "@putenv XDEBUG_MODE=coverage",
+      "vendor/bin/phpunit --coverage-text"
+    ],
+    "test-verbose": "vendor/bin/phpunit --verbose",
+    "test-filter": "vendor/bin/phpunit --filter",
+    "lint": "vendor/bin/pint --test",
+    "pint": "vendor/bin/pint",
+    "pint-fix": "vendor/bin/pint -v",
+    "check": [
+      "@lint",
+      "@test"
+    ],
+    "check-all": [
+      "@lint",
+      "@test"
+    ],
+    "security-audit": "composer audit --format=plain",
+    "check-outdated": "composer outdated --direct",
+    "validate-composer": "composer validate --strict",
+    "pre-install-cmd": "@validate-composer",
+    "pre-update-cmd": "@validate-composer"
+  },
+  "scripts-descriptions": {
+    "test": "Run test suite",
+    "test-coverage": "Generate HTML coverage report",
+    "test-coverage-clover": "Generate Clover XML coverage",
+    "test-coverage-text": "Generate text coverage report",
+    "test-verbose": "Run tests with verbose output",
+    "test-filter": "Run tests matching pattern",
+    "lint": "Check code style (Pint dry run)",
+    "pint": "Fix code style with Pint",
+    "pint-fix": "Fix code style with verbose output",
+    "check": "Run style check and tests",
+    "check-all": "Full quality check (style, tests)",
+    "security-audit": "Check for security vulnerabilities",
+    "check-outdated": "Check outdated dependencies",
+    "validate-composer": "Validate composer.json",
+    "pre-install-cmd": "Validate before installation",
+    "pre-update-cmd": "Validate before updates"
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.2.0"
+    },
+    "process-timeout": 2000,
+    "discard-changes": true,
+    "use-parent-dir": false
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ronald2Wing\\LaravelGa4\\Ga4ServiceProvider"
+      ],
+      "aliases": {
+        "Ga4": "Ronald2Wing\\LaravelGa4\\Facades\\Ga4"
+      }
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/.github",
+      "/.gitignore",
+      "/phpunit.xml",
+      "/README.md",
+      "/LICENSE"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
